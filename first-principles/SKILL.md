@@ -1,195 +1,157 @@
 ---
 name: first-principles
 description: >
-  Reason from first principles (Elon Musk / physics method) instead of
-  analogy or convention. Boil any problem down to what is actually true,
-  then reconstruct the solution from those truths. ALWAYS load this skill
-  before planning, building, designing, debugging, deciding, researching,
-  writing, advising, or choosing an approach — including product questions,
-  architecture, UX, copy, strategy, and "how should we do X". Use it even
-  when the user never says "first principles", "第一性原理", "马斯克", or
-  "思考". Skip only greetings and pure factual lookups that already have a
-  known answer.
+  用第一性原理（马斯克 / 物理学方法）思考，而不是靠类比或惯例。
+  把问题拆到真正成立的事实，再从这些事实重建方案。规划、搭建、
+  设计、调试、决策、研究、写作、建议、选方案时务必先加载本技能
+  ——包括产品、架构、交互、文案、策略，以及「X 该怎么做」。
+  即使用户没说 first principles、第一性原理、马斯克或思考，也要用。
+  只有打招呼、以及已有确定答案的纯事实查询可以跳过。
 ---
 
-# First Principles
+# 第一性原理
 
-This is a **thinking layer**. Load it first. After the approach is
-reconstructed, use whatever specialist skill or tool the job needs and
-execute.
+这是一层**思考层**。先加载它。思路重建完之后，再用这项工作需要的专业技能或工具去执行。
 
-Default human thinking — and default model thinking — is **analogy**:
-"this is like X, so do what people do for X." That copies form and
-inherits every hidden assumption inside the form. First principles
-interrupt that.
+人的默认思维——以及模型的默认思维——是**类比**：「这很像 X，所以就按大家对 X 的做法来。」这会抄到形式，也继承形式里所有隐藏假设。第一性原理就是要打断这件事。
 
-Musk: boil things down to the most fundamental truths you can be sure
-of, then reason up from there.
+马斯克：把事情拆到你能确定的最基本事实，再从那里往上推理。
 
-You do **not** need atomic physics on every task. Go **one or two
-levels deeper than the usual answer**. That is usually enough to see
-whether the usual answer is load-bearing or just habit.
+你**不必**每次都拆到原子物理。通常比常规答案**再深一两层**就够了，足以看出常规答案是承重墙，还是只是习惯。
 
 ---
 
-## 0. Proportionality (do not stall)
+## 0. 按比例用力（不要拖死）
 
-| Task | Depth |
+| 任务 | 深度 |
 | --- | --- |
-| Greeting, typo, known fact, one-line tweak with an obvious fix | 5-second assumption scan. Act. |
-| Standard work | Silent loop: name the function, list 3 load-bearing assumptions, rebuild if any are convention. Then do the work. |
-| Novel, expensive, ambiguous, high-stakes, or the analogical answer feels wrong | Full loop. Read `references/musk-method.md`. Surface the reconstruction if it changes the plan. |
+| 打招呼、错别字、已知事实、一眼能改的一行微调 | 五秒扫一遍假设。直接动手。 |
+| 常规工作 | 默默走一遍：点出功能、列出 3 条承重假设，若是惯例就重建。然后干活。 |
+| 新颖、昂贵、含糊、高风险，或类比答案感觉不对 | 走完整循环。读 `references/musk-method.md`。若重建改变了计划，再亮给用户看。 |
 
-First principles is a **better first move**, not a substitute for
-shipping. After the reconstruction, act. Do not write a treatise and
-wait.
+第一性原理是**更好的第一步**，不是交差的替代品。重建完就行动。不要写一篇论文然后等着。
 
 ---
 
-## 1. The loop
+## 1. 循环
 
-Run this before committing to an approach.
+在锁定一种做法之前先跑这一遍。
 
-### 1. Name the function, not the form
+### 1. 点出功能，不要点出形式
 
-The user asked for a **form** ("clone Twitter", "add a dashboard",
-"use Mongo", "make it like Notion"). Translate to the **function**:
+用户要的往往是**形式**（「克隆 Twitter」「加个仪表盘」「用 Mongo」「做成 Notion 那样」）。先翻译成**功能**：
 
-- What outcome must be true when this is done?
-- Who is it for, in one concrete sentence?
-- What would "it worked" look like if no existing product existed?
+- 做完之后，必须成立的结果是什么？
+- 给谁用？用一句具体的话写清楚。
+- 假如世上还没有现成产品，「做成了」会长什么样？
 
-Optimize the function. The requested form is a hint, not an axiom —
-unless the user is clearly choosing the form on purpose (taste, brand,
-explicit constraint). Then the form **is** an axiom. Do not "first
-principles" away a stated want.
+优化功能。用户点名的形式只是提示，不是公理——除非用户明显是在主动选形式（品味、品牌、明确约束）。那时形式**就是**公理。不要用「第一性原理」把已经说清的愿望消掉。
 
-### 2. Empty the assumption bag
+### 2. 清空假设袋
 
-Name what is being treated as given — silently, unless you will show
-the reconstruction. Typical sources:
+点出那些被当成「本来如此」的东西——默默做即可，除非你准备展示重建过程。常见来源：
 
-- the user's framing
-- industry convention / "best practice" / popular stack
-- your own last similar answer or build
-- existing code or process that "is just how it is"
-- social proof ("everyone uses X")
+- 用户自己的表述框架
+- 行业惯例 /「最佳实践」/ 流行技术栈
+- 你上一次类似的回答或实现
+- 现有代码或流程里「一直就是这样」
+- 社会证明（「大家都用 X」）
 
-Mark each one: **fact**, **constraint**, or **hypothesis**.
-Only facts and real constraints survive into step 3.
+给每一条打标：**事实**、**约束**、或**假说**。
+只有事实和真实约束能进入第 3 步。
 
-A requirement with no name and no "why" is a hypothesis. Musk's rule:
-question every requirement, especially ones that came from someone
-smart — or from you.
+没有名字、也说不清「为什么」的需求，就是假说。马斯克的规则：质疑每一条需求，尤其是聪明人提出来的——也包括你自己提出来的。
 
-### 3. Boil to axioms
+### 3. 煮到公理
 
-Ask: **"What are we sure is true?"**
+问：**「我们确定什么是真的？」**
 
-Axioms are usually:
+公理通常是：
 
-- **Physics / reality** — time, cost, bytes, contrast, materials, energy
-- **User goal** — the function from step 1, plus stated taste/constraints
-- **Measured fact** — a number you looked up or observed, not a vibe
-- **Environment contracts** — what this surface can actually do
+- **物理 / 现实** — 时间、成本、字节、对比度、材料、能量
+- **用户目标** — 第 1 步的功能，加上已声明的品味/约束
+- **测到的事实** — 你查过或观察到的数字，不是感觉
+- **环境契约** — 这个界面实际能做什么
 
-Not axioms: "apps like this always have onboarding", "dashboards use
-sidebar + cards", "this library is the standard", "we should add
-settings because real products have settings."
+不是公理：「这类应用都要有引导页」「仪表盘就是侧栏 + 卡片」「这个库是标准」「真产品都有设置，所以我们也要加」。
 
-If you cannot tell fact from habit, the next move is a **cheap test**
-(search, measure, try it), not a longer argument.
+如果分不清事实和习惯，下一步是**便宜的检验**（搜、量、试），不是更长的辩论。
 
-### 4. Reason up — reconstruct
+### 4. 往上推理 — 重建
 
-From only the axioms, ask:
+只从公理出发，问：
 
-> If nothing like this existed, what would we build / say / do?
+> 假如这类东西还不存在，我们会做 / 说 / 干什么？
 
-Rebuild the smallest thing that satisfies the function. Borrow pieces
-from unrelated domains when they fit the function better than the
-inherited form (snowmobile = bike seat + tank treads + boat motor).
+重建能满足功能的最小东西。无关领域的零件只要更贴功能，就可以借（雪地摩托 = 自行车座 + 坦克履带 + 船用马达）。
 
-Then apply Musk's **execution order** — later steps are forbidden
-until earlier ones are done:
+然后按马斯克的**执行顺序**——前面没做完，禁止做后面：
 
-1. **Make the requirement less dumb** — who asked, and why?
-2. **Delete** the part or process. If you don't later add back ~10%,
-   you didn't delete enough.
-3. **Simplify** what remains. The most common error is polishing
-   something that should not exist.
-4. **Accelerate** cycle time.
-5. **Automate** last. Automating a useless step just digs the grave faster.
+1. **先让需求不那么蠢** — 谁提的，为什么？
+2. **删除**部件或流程。如果后来加不回大约 10%，说明删得不够。
+3. **简化**剩下的。最常见的错，是把本不该存在的东西打磨得很亮。
+4. **加快**循环时间。
+5. **最后才自动化**。把没用的步骤自动化，只是把坑挖得更快。
 
-The only hard rules are physics and the user's real constraints.
-Everything else is a recommendation.
+硬规则只有物理规律和用户的真实约束。
+其余都是建议。
 
-### 5. Stress-test, then move
+### 5. 加压测试，然后动手
 
-- Which axiom, if wrong, flips the answer? Check that one.
-- What is the cheapest experiment that would change your mind?
-- Solicit the negative case yourself: "why is this plan wrong?"
+- 哪一条公理若错了，答案会翻盘？先核这一条。
+- 能改变你想法的最便宜实验是什么？
+- 自己先找反例：「这个计划为什么是错的？」
 
-Then execute. Update axioms when reality disagrees. Do not defend the
-reconstruction against a measurement.
+然后执行。现实和公理打架时，更新公理。不要用重建去对抗测量。
 
 ---
 
-## 2. When to show the thinking
+## 2. 什么时候把思考亮出来
 
-Default: **think this way, do not dump the worksheet.**
+默认：**这样想，但不要把工作表整页倒出来。**
 
-Show a short reconstruction (function → axioms → what you discarded →
-what you will do) when any of these are true:
+出现下面任一情况时，给一段短重建（功能 → 公理 → 丢掉了什么 → 接下来做什么）：
 
-- the user asked how to think, why, or said 第一性原理 / first principles
-- the reconstructed plan **differs** from the obvious analogical one
-- there is a real tradeoff the user should own
-- you are about to reject or reinterpret the requested form
+- 用户问怎么想、为什么，或说了第一性原理 / first principles
+- 重建后的计划**不同于**显而易见的类比方案
+- 有真实取舍需要用户自己拍板
+- 你准备拒绝或改写用户点名的形式
 
-Keep it short. Match the user's language. Never perform "I am using
-first principles" as decoration.
+写短。跟用户的语言对齐。永远不要把「我在用第一性原理」当成装饰表演。
 
-Template when you do surface it:
+需要亮出来时用这个模板：
 
 ```text
-功能：<the outcome that must be true>
-公理：<2–5 things we are sure of>
-丢掉的习惯：<the analogical move we are not doing, and why>
-做法：<the reconstructed next action>
+功能：<必须成立的结果>
+公理：<2–5 条我们确定的事>
+丢掉的习惯：<我们不做的类比动作，以及原因>
+做法：<重建后的下一步>
 ```
 
 ---
 
-## 3. Compose with other skills
+## 3. 和其他技能怎么配合
 
-This skill chooses **what** and **why**. Specialist skills choose **how**.
+本技能决定**做什么**和**为什么**。专业技能决定**怎么做**。
 
-Do not skip a known specialist skill or measured failure mode because
-you "reasoned from first principles." Ignoring a documented pitfall is
-just a new analogy: the analogy of sounding rigorous.
+不要因为你「从第一性原理推过了」，就跳过已知的专业技能或已经测到的失败模式。无视文档里写死的坑，只是一种新的类比：听起来很严谨的类比。
 
 ---
 
-## 4. Read on demand
+## 4. 按需阅读
 
-- `references/musk-method.md` — source method, rocket/battery numbers,
-  the algorithm in full, when analogy is allowed
-- `references/worked-examples.md` — product, debug, clone, and design
-  reconstructions
-- `references/anti-patterns.md` — fake first principles, physics
-  LARPing, overthinking, deleting the user's want
+- `references/musk-method.md` — 方法出处、火箭/电池数字、完整算法、何时允许类比
+- `references/worked-examples.md` — 产品、调试、克隆、设计的重建例子
+- `references/anti-patterns.md` — 假第一性原理、物理角色扮演、想太多、删掉用户愿望
 
-Read the anti-patterns file if you notice yourself writing a long
-justification, adding features "a real product would have," or
-questioning a constraint the user already chose.
+如果你发现自己在写很长的辩护、在加「真产品都会有」的功能、或在质疑用户已经选好的约束，就去读反模式那篇。
 
 ---
 
-## Finish check
+## 收工检查
 
-- [ ] Function named independently of the requested form
-- [ ] Assumptions sorted into fact / constraint / hypothesis
-- [ ] Plan reasoned up from axioms, not from "how people usually do this"
-- [ ] Something was deleted or refused (or you can say why nothing could be)
-- [ ] You are acting, not still analyzing
+- [ ] 功能是按结果点出来的，不是按用户点名的形式
+- [ ] 假设已分成事实 / 约束 / 假说
+- [ ] 计划是从公理往上推的，不是「大家通常怎么做」
+- [ ] 删掉了或拒绝了某样东西（或说得清为什么不能删）
+- [ ] 你在行动，而不是还在分析

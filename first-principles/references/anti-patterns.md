@@ -1,118 +1,91 @@
-# Anti-patterns
+# 反模式
 
-Read this when you are writing a long justification, adding "what a
-real product would have," or about to override a want the user already
-chose.
+你在写很长的辩护、在加「真产品都会有」的东西、或准备推翻用户已经选好的愿望时，读这篇。
 
-## 1. Fake first principles
+## 1. 假第一性原理
 
-Symptoms:
+症状：
 
-- a numbered list that restates the analogical plan in solemn language
-- "axiom: users expect a hamburger menu"
-- "axiom: we should use a design system" (that is a method, not a truth)
-- quoting Musk and then cloning the category leader
+- 一份编号清单，只用庄重的话把类比计划再说一遍
+- 「公理：用户期待汉堡菜单」
+- 「公理：我们应该用设计系统」（那是方法，不是真理）
+- 引用马斯克，然后去克隆品类第一名
 
-A real axiom survives the question **"how do we know?"** with a
-measurement, a law, or a stated user constraint. If the answer is
-"that's how these apps work," it is an analogy wearing a lab coat.
+真公理能扛住「我们怎么知道？」——用测量、定律，或用户已经说清的约束来答。如果答案是「这类应用都这样」，那就是穿着实验服的类比。
 
-## 2. Physics LARPing
+## 2. 物理角色扮演
 
-Going to atoms, Maxwell, or "what is information" when the next action
-will not change.
+挖到原子、麦克斯韦，或「信息是什么」，但下一步并不会因此改变。
 
-One or two levels below the common description. Stop when further
-digging does not change what you build this hour.
+比常见描述低一两层即可。再挖下去也不改变这一个小时要做什么，就停。
 
-Related: padding a reply with the history of first principles so the
-user can see you are being rigorous. They asked for the thing, not the
-seminar.
+相关：为了显得严谨，在回复里垫第一性原理的历史。用户要的是那件事，不是研讨会。
 
-## 3. Deleting the user's want
+## 3. 删掉用户的愿望
 
-The method questions *requirements*, not *taste they already picked*.
+这个方法质疑的是*需求*，不是*他们已经选好的品味*。
 
-If they said dark, Japanese, "exactly like this sketch," "must have a
-feed," those are constraints. Reconstruct **inside** them.
+他们说要深色、日式、「就按这张草图」、「必须有信息流」，那些是约束。在约束**里面**重建。
 
-Question the want only when:
+只有这些情况才可以质疑愿望：
 
-- it contradicts a harder axiom (physics, safety, the preview cannot
-  do it)
-- they named a form that cannot deliver the function they also named
-- they asked you to think, not just to obey
+- 它和更硬的公理打架（物理、安全、预览环境做不到）
+- 他们点名的形式，交不出他们同时点名的功能
+- 他们要你思考，而不只是服从
 
-Then say so briefly and offer the reconstructed option. Do not silently
-substitute.
+那时简短说清楚，并给出重建后的选项。不要悄悄换掉。
 
-## 4. Overthinking as politeness
+## 4. 把想太多当成礼貌
 
-Using the loop to delay a decision the axioms already settle. Shipping
-a smaller correct thing teaches more than another pass of "what is a
-task, really?"
+公理已经能拍板了，还用循环拖延决策。先交出更小但正确的东西，比再问一遍「任务到底是什么」更有用。
 
-If you have the function, 3 axioms, and a smallest reconstruction —
-build it.
+如果你已经有功能、3 条公理、以及最小重建——就做出来。
 
-## 5. Optimizing the leftover ceremony
+## 5. 优化本该删掉的仪式
 
-Musk's most common intelligent-person error: making a thing excellent
-that should have been deleted.
+马斯克说聪明人最常犯的错：把本该删掉的东西做得极其优秀。
 
-Tells:
+破绽：
 
-- a beautiful empty state for a screen that should not exist
-- a clever cache around a fetch you do not need
-- animating an onboarding step whose information belongs on the first
-  screen
-- abstracting one call site "for reuse"
+- 一个不该存在的页面，却有漂亮的空状态
+- 一次根本不需要的请求，外面套了聪明的缓存
+- 引导步骤做了动画，但信息本该出现在第一屏
+- 只有一个调用点，却「为了复用」抽了抽象
 
-Delete, then polish what remains.
+先删，再打磨剩下的。
 
-## 6. Automating first
+## 6. 先自动化
 
-Writing a framework, a generator, a config layer, or a plugin system
-before a single manual path works.
+一条手工路径都还没跑通，就开始写框架、生成器、配置层或插件系统。
 
-First make one instance correct and simple. Accelerate. Automate only
-the boring remainder.
+先把一个实例做对、做简单。再加快。只自动化剩下那些无聊的部分。
 
-## 7. Requirements with no owner
+## 7. 没有主人的需求
 
-"We'll need admin roles." "We'll need i18n." "We'll need analytics."
-"We'll need a landing page *and* an app *and* a blog."
+「我们会需要管理员角色。」「我们会需要国际化。」「我们会需要分析。」
+「我们会需要落地页 *再加* 应用 *再加* 博客。」
 
-Who asked? What breaks if it is absent from v1? If you cannot name
-either, it is not a v1 requirement.
+谁提的？v1 没有它会坏什么？两边都说不清，它就不是 v1 需求。
 
-## 8. Analogy to your last build
+## 8. 类比到你上一次的实现
 
-The previous app in context (or in training) had auth, a sidebar, and
-four routes. This request is a timer. Copying the last skeleton is
-analogy.
+上下文里（或训练里）上一个应用有登录、侧栏和四条路由。这次请求是一个计时器。抄上一具骨架就是类比。
 
-Rebuild from this function. Reuse platform wiring (auth helpers, Vite
-port contract) because those are **real constraints of this
-environment**, not because the last demo used them.
+从这次的功能重建。平台接线（登录辅助、Vite 端口契约）可以复用，因为那是**这个环境的真实约束**，不是因为上次演示用过。
 
-## 9. First principles versus known failure modes
+## 9. 第一性原理对上已知失败模式
 
-Ignoring a domain skill's hard-won axiom because you "reasoned from
-scratch":
+因为你「从零推过了」，就无视某个领域技能里用代价换来的公理：
 
-- inverted A/D (`controls`)
-- blank production build (asset MIME / nitro gated to `build`)
-- ad-hoc hex and purple blobs (`design-ui`)
-- code-drawn stick figures where real sprites were implied
+- 左右键反了（`controls`）
+- 生产构建是白屏（资源 MIME / nitro 只在 `build` 打开）
+- 临时十六进制和紫色色块（`design-ui`）
+- 本该用真精灵图，却用代码画火柴人
 
-Those are measured facts about this environment. Treating them as
-optional is not independent thought.
+那些是这个环境里测过的事实。把它们当成可选项，不是独立思考。
 
-## 10. Performing the worksheet
+## 10. 表演工作表
 
-Pasting the function/axioms/deleted/plan block on every reply,
-including "change the button to green."
+每条回复都粘「功能 / 公理 / 删掉了什么 / 计划」，包括「把按钮改成绿色」。
 
-Show the reconstruction only when `SKILL.md` §2 says so. Otherwise
-let the work reveal the thinking.
+只在 `SKILL.md` 第 2 节要求时才展示重建。其余时候，让做出来的东西自己说明思考。
