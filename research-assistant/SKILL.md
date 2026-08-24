@@ -1,41 +1,49 @@
 ---
 name: research-assistant
-description: Systematic research workflows for SOTA AI agents. Includes tool-triggered searches, multi-source synthesis, source credibility evaluation, bias detection, structured reporting, and citation practices. Use for deep research, competitive analysis, literature reviews, due diligence, or any investigation task.
+description: >
+  系统化研究流程，给 SOTA AI 助手用。包括用工具触发检索、多源综合、
+  来源可信度评估、偏见识别、结构化报告和引用规范。用于深度研究、
+  竞品分析、文献综述、尽职调查或任何调查任务。
+  触发词：research, 研究, 调研, 文献, 尽调, due diligence。
 ---
 
-# Research Assistant
+# 研究助手
 
-When active, guide the agent through rigorous, transparent research processes.
+启用后，带着助手走严谨、可追溯的研究流程。
 
-## Core Principles
-- Always use tools explicitly for current information (web search, X search, browse specific pages).
-- Cross-verify information across multiple independent sources.
-- Distinguish between facts, opinions, and speculation.
-- Evaluate source credibility, recency, and potential bias.
-- Structure outputs clearly with sources and confidence levels.
+## 核心原则
 
-## Recommended Workflow
-1. **Clarify Scope**: Define exact research questions and success criteria with the user.
-2. **Tool Activation**: Explicitly trigger searches: "Search the web for...", "Search X for recent discussions on...", "Browse [specific authoritative page]".
-3. **Gather & Synthesize**: Collect key points from multiple sources. Note agreements, contradictions, and gaps.
-4. **Evaluate**: Assess reliability of each source. Flag potential biases or outdated info.
-5. **Structure Output**:
-   - Executive Summary
-   - Key Findings (with sources)
-   - Conflicting Views / Uncertainties
-   - Recommendations or Next Steps
-   - Full Source List with dates/access info
-6. **Iterate**: Offer to dive deeper into specific areas or update with new searches.
+- 当前信息必须显式用工具查（网页搜索、X 搜索、打开指定页面）。
+- 用多个独立来源交叉核验。
+- 分清事实、观点和推测。
+- 评估来源可信度、时效和潜在偏见。
+- 输出要结构清楚，带来源和把握程度。
 
-## Output Quality Rules
-- Every claim should be traceable to a source.
-- Use tables for comparisons when helpful.
-- Include confidence levels or "as of [date]" notes for time-sensitive info.
-- Be transparent about limitations of available data.
+## 推荐流程
 
-## Pitfalls to Avoid
-- Relying on single source or model training data alone.
-- Presenting speculation as fact.
-- Over-generalizing from limited results.
+1. **澄清范围**：和用户一起钉死研究问题和成功标准。
+2. **启动工具**：明确触发检索：「搜索网页……」「在 X 上搜最近讨论……」「打开 [某个权威页面]」。
+3. **收集并综合**：从多个来源摘出要点。记下一致、矛盾和缺口。
+4. **评估**：判断每个来源可不可靠。标出偏见或过时信息。
+5. **组织输出**：
+   - 摘要
+   - 主要发现（带来源）
+   - 冲突观点 / 不确定处
+   - 建议或下一步
+   - 完整来源列表，带日期/访问信息
+6. **迭代**：主动提出可以再深挖哪些点，或用新检索更新。
 
-This skill produces reliable, well-sourced research outputs.
+## 输出质量规则
+
+- 每一条主张都要能追到来源。
+- 适合对比时用表格。
+- 对时效敏感的信息，写把握程度或「截至 [日期]」。
+- 现有数据的局限要如实说。
+
+## 要避开的坑
+
+- 只靠单一来源，或只靠模型训练记忆。
+- 把推测写成事实。
+- 从有限结果过度推广。
+
+本技能产出的是可靠、带来源的研究结果。
