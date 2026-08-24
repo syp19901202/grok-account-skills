@@ -1,27 +1,28 @@
-# Musk / physics first-principles method
+# 马斯克 / 物理学第一性原理方法
 
-Load this when the task is novel, expensive, or the analogical answer
-feels sticky. The `SKILL.md` loop is enough for ordinary work.
+任务新颖、昂贵，或类比答案黏住不放时再读这篇。日常工作用 `SKILL.md` 里的循环就够。
 
-## What a first principle is
+## 什么是第一性原理
 
-Aristotle: "the first basis from which a thing is known" — a premise
-that cannot usefully be deduced from something more basic **in this
-problem**.
+亚里士多德：「认识一件事的最初依据」——在**这个问题里**，没法再有用地从更底层推出来的前提。
 
-You are not doing particle physics. You are refusing to treat
-*inherited form* as *necessary truth*.
+你不是在做粒子物理。你是在拒绝把*继承来的形式*当成*必然真理*。
 
-Musk (TED / interviews):
+马斯克（TED / 访谈）：
 
 > I tend to approach things from a physics framework. Physics teaches
 > you to reason from first principles rather than by analogy. … boil
 > things down to the most fundamental truths and say, "What are we
 > sure is true?" … and then reason up from there.
 
+> 我倾向用物理学框架看问题。物理教你从第一性原理推理，而不是靠类比。
+> ……把事情拆到最基本的事实，问「我们确定什么是真的？」……再从那里往上推。
+
 > The normal way we conduct our lives is we reason by analogy. We are
 > doing this because it is like something else that was done, or it is
 > like what other people are doing.
+
+> 日常生活里我们通常靠类比推理：因为以前有人这么做过，或别人都在这么做。
 
 > Though most of our life we get through it by reasoning through
 > analogy … otherwise mentally you wouldn't be able to get through the
@@ -29,108 +30,90 @@ Musk (TED / interviews):
 > physics approach. Physics has really figured out how to discover new
 > things that are counter-intuitive, like quantum mechanics.
 
+> 大部分日子靠类比就能过完，否则脑子撑不住。但要做新东西，就必须用物理方法。
+> 物理真正会发现反直觉的新事物，比如量子力学。
+
 > The only rules are the ones dictated by the laws of physics.
 > Everything else is a recommendation.
 
-Two more habits he pairs with the method:
+> 硬规则只有物理定律。其余都是建议。
 
-- **Solicit negative feedback**, especially from people who will
-  actually tell you that you are wrong. Generate the counter-argument
-  yourself if nobody else is in the room.
-- **Use analogy for the routine day.** First principles is for the
-  part that needs to be new, cheaper, simpler, or true.
+他还配了两个习惯：
 
-## Worked source examples (keep the numbers)
+- **主动要负面反馈**，尤其是真会告诉你「你错了」的人。屋里没别人，就自己写反方。
+- **日常用类比。** 第一性原理留给必须新、更便宜、更简单、或必须为真的那一段。
 
-### Rockets — SpaceX
+## 出处里的例子（数字要保留）
 
-Analogical frame: "orbital rockets cost $50–65M; that is what rockets
-cost."
+### 火箭 — SpaceX
 
-First-principles questions:
+类比框架：「轨道火箭要 5000–6500 万美元；火箭就是这个价。」
 
-1. What is a rocket *made of*? Aerospace aluminum alloys, titanium,
-   copper, carbon fiber.
-2. What do those materials cost on the commodity market?
-3. Answer Musk cited: materials ≈ **2% of the typical rocket price**.
+第一性原理问题：
 
-So the axiom is not "rockets are expensive." The axiom is "these
-materials, arranged to survive this physics, currently carry a huge
-manufacturing and non-reuse markup." The reconstructed moves:
-manufacture in-house, delete parts, reuse the expensive ones.
+1. 火箭*是什么做的*？航空铝合金、钛、铜、碳纤维。
+2. 这些材料在大宗商品市场卖多少钱？
+3. 马斯克引用的答案：材料大约只占典型火箭售价的 **2%**。
 
-The analogical industry optimized the *form* (expendable government
-rockets). First principles optimized the *function* (mass to orbit).
+所以公理不是「火箭很贵」。公理是「这些材料按物理排好之后，现在扛着巨大的制造和不复用溢价」。重建后的动作：自己造、删零件、把贵的那些拿回来复用。
 
-### Batteries
+类比行业优化的是*形式*（一次性政府火箭）。第一性原理优化的是*功能*（把质量送上轨道）。
 
-Analogical frame: "batteries cost X per kWh because that is the
-industry price."
+### 电池
 
-First-principles: what materials, in what proportions, at commodity
-prices? Then: what process steps add the rest of the cost? Delete or
-vertical-integrate the expensive steps.
+类比框架：「电池每度电要 X，因为行业价就是 X。」
 
-## The Algorithm (execution order — do not invert)
+第一性原理：什么材料、什么比例、大宗商品价是多少？然后：哪些工序把剩下的成本加上去了？把贵的步骤删掉，或自己做。
 
-1. **Make the requirement less dumb** — Who asked, and why? Question
-   every requirement, especially ones from smart people (including
-   yourself).
-2. **Delete** the part or process. If you don't later add back ~10%,
-   you didn't delete enough.
-3. **Simplify** what remains. The most common error is polishing
-   something that should not exist.
-4. **Accelerate** cycle time.
-5. **Automate** last. Automating a useless step just digs the grave
-   faster.
+## 算法（执行顺序 — 不许颠倒）
 
-The only hard rules are physics and the user's real constraints.
-Everything else is a recommendation.
+1. **先让需求不那么蠢** — 谁提的，为什么？质疑每一条需求，尤其是聪明人提的（包括你自己）。
+2. **删除**部件或流程。如果后来加不回大约 10%，说明删得不够。
+3. **简化**剩下的。最常见的错，是把本不该存在的东西打磨得很亮。
+4. **加快**循环时间。
+5. **最后才自动化**。把没用的步骤自动化，只是把坑挖得更快。
 
-## When analogy is the right tool
+硬规则只有物理规律和用户的真实约束。
+其余都是建议。
 
-Analogy is not a sin. It is compression.
+## 什么时候类比才是对的工具
 
-Use it when:
+类比不是罪。它是压缩。
 
-- the problem is routine and the inherited form is cheap and known-good
-- you are matching an existing system on purpose (this app's tokens,
-  this engine's conventions, this user's stated taste)
-- you need a 5-second answer and being 10% wasteful is fine
+可以类比的时候：
 
-Refuse it when:
+- 问题常规，继承来的形式又便宜又已知能用
+- 你是故意对齐现有系统（这个应用的 token、这个引擎的惯例、用户已经说的品味）
+- 你需要五秒答案，浪费 10% 也无所谓
 
-- the form is expensive, ugly, or "everyone does it this way"
-- you are about to add a layer / entity / settings screen / engine
-  "because real apps have one"
-- the user asked for a clone but the function is smaller than the clone
-- a number (cost, latency, steps, fields) feels inherited rather than
-  measured
+该拒绝类比的时候：
 
-A practical split: **analogy to start moving, first principles on
-anything you are about to keep.**
+- 形式很贵、很难看，或只是「大家都这么做」
+- 你准备加一层 / 一个实体 / 一个设置页 / 一个引擎，「因为真应用都有」
+- 用户要克隆，但功能其实比克隆小
+- 某个数字（成本、延迟、步骤、字段）感觉是继承来的，不是量出来的
 
-## How far to dig
+实用拆分：**用类比先动起来，对你准备留下的东西再用第一性原理。**
 
-James Clear's operational rule: you do not have to reach atoms. Go
-one or two levels below the common description.
+## 挖多深
 
-| Common description | One level down | Two levels down |
+James Clear 的操作规则：不必挖到原子。比常见描述再低一两层即可。
+
+| 常见描述 | 低一层 | 低两层 |
 | --- | --- | --- |
-| "We need a dashboard" | "Someone must see these 4 numbers and act" | "The action is: reply to the overdue invoice" |
-| "Clone Twitter" | "People post short public notes and follow others" | "This user wants to jot thoughts and see friends' thoughts" |
-| "Add authentication" | "This data must belong to one person" | "Only the owner may read or write these rows" |
-| "The game needs a tutorial" | "The player must learn A = left before the first crash" | "The first 10 seconds are the tutorial" |
+| 「我们需要仪表盘」 | 「得有人看到这 4 个数并行动」 | 「行动是：催那张逾期发票」 |
+| 「克隆 Twitter」 | 「人发短公开笔记，并关注别人」 | 「这个用户想随手记想法，并看朋友的想法」 |
+| 「加上登录」 | 「这些数据必须属于一个人」 | 「只有主人能读或写这些行」 |
+| 「游戏需要教程」 | 「玩家第一次撞车前必须学会 A = 向左」 | 「前 10 秒就是教程」 |
 
-Stop when further decomposition does not change the next action.
+再拆下去也不改变下一步时，就停。
 
-## Negative feedback as a step
+## 把负面反馈当成一步
 
-Before you lock a non-trivial plan, spend one pass on:
+锁定非琐碎计划之前，花一轮填这些空：
 
-- "This plan is wrong because ___."
-- "The axiom I am least sure of is ___."
-- "If I am just copying a familiar app, the tell is ___."
+- 「这个计划是错的，因为 ___。」
+- 「我最没把握的公理是 ___。」
+- 「如果我只是在抄熟悉的应用，破绽是 ___。」
 
-If you cannot fill those blanks, you have not looked. If you can,
-either check the weak axiom or proceed with eyes open.
+填不出，就是还没看。填得出，就去核那条弱公理，或睁着眼往下做。

@@ -1,178 +1,139 @@
-# Worked reconstructions
+# 重建例子
 
-These are patterns, not templates to paste. Steal the *move*, not the
-nouns.
+这些是招式，不是拿来粘贴的模板。偷*动作*，别偷名词。
 
 ---
 
-## 1. "Clone Twitter"
+## 1. 「克隆 Twitter」
 
-**Requested form:** a Twitter clone.
+**点名的形式：** Twitter 克隆。
 
-**Function:** people write short public notes; other people they chose
-can see those notes in time order.
+**功能：** 人写短的公开笔记；他们选中的其他人能按时间看到这些笔记。
 
-**Assumption bag:**
+**假设袋：**
 
-| Claim | Sort |
+| 说法 | 归类 |
 | --- | --- |
-| Need tweets, retweets, likes, DMs, Spaces, Grok, ads, explore | hypothesis (platform residue) |
-| Need follow graph + timeline | maybe — only if "other people they chose" is real |
-| Need accounts | constraint if notes persist per person; else not |
-| Must look like Twitter | hypothesis unless the user said "look like Twitter" |
-| Preview must actually run | fact (platform) |
+| 需要推文、转发、点赞、私信、Spaces、Grok、广告、探索 | 假说（平台残留） |
+| 需要关注关系和时间线 | 也许 — 只有「他们选中的其他人」是真需求时 |
+| 需要账号 | 若笔记按人持久保存，这是约束；否则不是 |
+| 必须长得像 Twitter | 假说，除非用户说了「长得像 Twitter」 |
+| 预览必须真能跑 | 事实（平台） |
 
-**Axioms:** one composer, a readable list, identity if persistence
-matters, mobile-usable tap targets.
+**公理：** 一个输入框、一份能读的列表、需要持久化时才要身份、适合手指点的热区。
 
-**Deleted:** Spaces, ads, explore, trending, moments, bookmarks
-folders, the second sidebar.
+**删掉的：** Spaces、广告、探索、趋势、瞬间、书签文件夹、第二条侧栏。
 
-**Reconstructed:** a tight feed + compose + follow (or even a single
-shared board if "follow" is not the job). Looks like *this* product,
-not a blue-bird skin.
+**重建：** 紧凑的信息流 + 发帖 + 关注（若「关注」不是这份工作，甚至可以是一块共享板）。长得像*这个*产品，不是一层蓝鸟皮肤。
 
-**Tell you copied:** you built a right-rail "What's happening" panel
-with fake trends.
+**抄袭破绽：** 你做了右侧「正在发生」栏，还填了假趋势。
 
 ---
 
-## 2. "Build a dashboard"
+## 2. 「做个仪表盘」
 
-**Requested form:** dashboard.
+**点名的形式：** 仪表盘。
 
-**Function (must be named):** e.g. "I can see which invoices are late
-and poke the late ones."
+**功能（必须点出来）：** 例如「我能看见哪些发票逾期，并去催那些逾期的。」
 
-**Analogical build:** sidebar, 4 KPI cards, a big area chart, a table
-nobody acts on, a date range that does nothing.
+**类比做法：** 侧栏、4 张 KPI 卡片、一张没人动手的大面积图、一个不起作用的日期范围。
 
-**Axioms:** there are invoices; lateness is `due_at < now && unpaid`;
-the action is remind / mark paid.
+**公理：** 有发票；逾期是 `due_at < now && unpaid`；动作是催款 / 标成已付。
 
-**Reconstructed:** a list of late invoices, the amount, one primary
-action per row. Totals are a byproduct of that list, not the product.
-A chart earns its place only if it changes a decision the list cannot.
+**重建：** 逾期发票列表、金额、每行一个主操作。合计是这份列表的副产品，不是产品本身。图只有在它能改变列表改变不了的决策时，才配占位置。
 
-**Tell you copied:** four cards that restate the same table.
+**抄袭破绽：** 四张卡片只是把同一张表再说一遍。
 
 ---
 
-## 3. "Add settings"
+## 3. 「加设置」
 
-**Requested form:** a settings page.
+**点名的形式：** 设置页。
 
-**Function:** change the 1–2 things a person actually needs to change
-(theme? name? default view?).
+**功能：** 改那 1–2 件一个人真正需要改的东西（主题？名字？默认视图？）。
 
-**Axioms:** those 1–2 values, persisted, reversible.
+**公理：** 那 1–2 个值，能保存，能改回去。
 
-**Deleted:** the settings route, the nav item, the 12-row form.
+**删掉的：** 设置路由、导航项、12 行表单。
 
-**Reconstructed:** a control where the decision happens (a theme toggle
-in the header; a rename on the profile). Add a settings page only when
-the knobs are many and rarely used.
+**重建：** 把控件放在做决定的地方（页头一个主题开关；资料上直接改名）。只有旋钮又多又很少用时，才加设置页。
 
-**Tell you copied:** a gear icon that opens three tabs of unused
-switches.
+**抄袭破绽：** 一个齿轮图标，打开三页没人用的开关。
 
 ---
 
-## 4. Bug: "the page is blank"
+## 4. 缺陷：「页面是白的」
 
-**Analogical debug:** restyle the hero, add a spinner, rewrite the
-router "to be cleaner."
+**类比调试：** 重做主视觉、加个转圈、把路由「写干净一点」。
 
-**Function:** the page must show the content that is supposed to be there.
+**功能：** 页面必须显示它该显示的内容。
 
-**Axioms:** data exists or does not; a component is throwing or not;
-a route matches or does not.
+**公理：** 数据有或没有；组件在抛错或不抛；路由匹配或不匹配。
 
-**Reconstructed path:** load it, read console + DOM, fix the first
-broken axiom. Do not "improve" around an unknown blank.
+**重建路径：** 打开它，看控制台和 DOM，先修第一条破掉的公理。不要围着未知白屏「优化」。
 
-**Tell you copied:** you shipped a new color token on a white screen.
+**抄袭破绽：** 白屏上线了一个新的颜色 token。
 
 ---
 
-## 5. Game: "make an FPS"
+## 5. 游戏：「做个 FPS」
 
-**Requested form:** FPS.
+**点名的形式：** FPS。
 
-**Function (typical one-liner):** move, look, shoot, something shoots
-back, you can tell if you are winning.
+**功能（常见一句话）：** 移动、看、开枪、有东西回击，你能看出自己是不是在赢。
 
-**Assumption bag:** sprint, ADS, recoil graphs, loot, 3 weapons,
-minimap, voice, multiplayer.
+**假设袋：** 冲刺、瞄准、后坐力曲线、战利品、3 把武器、小地图、语音、多人。
 
-**Axioms here:** single-player only on this target; WASD + pointer
-lock; A/D must not be inverted (`controls` skill); one enemy type is
-enough to prove the loop.
+**这里的公理：** 这个目标只做单人；WASD + 指针锁定；左右不能反（`controls` 技能）；一种敌人就够证明循环。
 
-**Deleted:** multiplayer, loadout screen, crafting.
+**删掉的：** 多人、配装页、合成。
 
-**Reconstructed:** one arena, one gun, one enemy, a score, a start
-overlay that states the controls. Then juice.
+**重建：** 一个场地、一把枪、一种敌人、一个分数、一块写明操作的开始遮罩。然后再做手感。
 
-**Tell you copied:** a pause menu with graphics quality presets and no
-working shoot.
+**抄袭破绽：** 暂停菜单里有画质预设，却打不出去。
 
 ---
 
-## 6. "Use the popular stack / add Redux / add a CMS"
+## 6. 「用流行技术栈 / 加 Redux / 加 CMS」
 
-**Requested form:** a named tool.
+**点名的形式：** 某个具名工具。
 
-**Function:** some state must survive some lifetime (one session? one
-user? many authors?).
+**功能：** 某种状态必须活过某段寿命（一次会话？一个用户？很多作者？）。
 
-**Axioms:** what already sits in the workspace (React, Zustand, the
-DB helpers) plus the actual lifetime.
+**公理：** 工作区里已经有什么（React、Zustand、数据库辅助）加上真实寿命。
 
-**Reconstructed:** use the thing already here if it covers the
-lifetime. Add a dependency only when an axiom (multi-user persistence,
-offline, …) is not met.
+**重建：** 现成的东西能覆盖寿命就用现成的。只有某条公理（多用户持久化、离线……）满足不了时，才加依赖。
 
-**Tell you copied:** a new state library next to a working store, "for
-scale."
+**抄袭破绽：** 已经有能用的 store，旁边再放一个新状态库，「为了规模」。
 
 ---
 
-## 7. Design: "make it look premium"
+## 7. 设计：「做成高级感」
 
-**Requested form:** premium / modern / clean.
+**点名的形式：** 高级 / 现代 / 干净。
 
-**Function:** a stranger understands the hierarchy in one glance and
-trusts the primary action.
+**功能：** 陌生人一眼看懂层级，并信任主操作。
 
-**Axioms (`design-ui`):** few colors, two fonts, tokens not ad-hoc hex,
-contrast, ~390px, no decorative blobs.
+**公理（`design-ui`）：** 颜色少、字体两种、用 token 不用临时十六进制、对比度、大约 390px、不要装饰色块。
 
-**Deleted:** gradient mesh, glassmorphism everywhere, extra accent
-hues, three competing CTAs.
+**删掉的：** 渐变网格、到处毛玻璃、多余强调色、三个互相抢的行动按钮。
 
-**Reconstructed:** one surface language, one accent, type and spacing
-do the luxury. Premium is restraint plus material honesty, not more
-effects.
+**重建：** 一套表面语言、一个强调色，靠字号和间距做出质感。高级是克制加上材料诚实，不是更多特效。
 
-**Tell you copied:** purple gradient, inter, rounded cards, fake
-testimonials.
+**抄袭破绽：** 紫色渐变、Inter、圆角卡片、假评价。
 
 ---
 
-## How to write your own
+## 怎么自己写一版
 
-For any new request, fill this once (silently unless §2 of `SKILL.md`
-says to show it):
+对任何新请求，先填这一次（默默填；只有 `SKILL.md` 第 2 节要求时才亮出来）：
 
 ```text
-form:     <what they named>
-function: <what must be true>
-axioms:   <sure facts + real constraints>
-hypotheses we are dropping: <…>
-smallest reconstruction: <next build>
+形式：    <他们点名的东西>
+功能：    <必须成立的结果>
+公理：    <确定的事实 + 真实约束>
+准备丢掉的假说：<…>
+最小重建：<下一步要做的>
 ```
 
-If the reconstruction equals the analogical default, say so to
-yourself and move. First principles that always invent a clever twist
-are just a new habit.
+如果重建等于类比默认，对自己说一声然后继续。永远要发明一个聪明转折的「第一性原理」，只是一种新习惯。
