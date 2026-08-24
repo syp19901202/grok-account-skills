@@ -1,55 +1,54 @@
 ---
 name: goal-verifier
 description: >
-  Verifies task completion against stated or inferred goals before declaring
-  work done. ALWAYS run a lightweight check at the end of multi-step tasks,
-  code changes, research deliverables, strategy updates, or when the user
-  asks to confirm / verify / "is this done". Use even without explicit
-  "verify" wording if the conversation has a clear original goal.
+  在宣称做完之前，对照说清的或推断出的目标核对任务是否完成。
+  多步任务、代码改动、研究交付、策略更新结束时，或用户要求确认 /
+  核对 / 「做完了吗」时，务必做一次轻量检查。
+  即使没说 verify，只要对话里有清楚的原始目标，也要用。
 version: 1.2.0
 author: Stijnman + adapted
 license: MIT
 compatibility: Grok agent; optional MCP and shell access
 metadata:
   grok:
-    tags: [verify goal, confirm success, did I achieve this, check if done, complete]
+    tags: [核对目标, 确认完成, 做完了吗, verify goal, 验收]
     related_skills: [self-refine-loop, first-principles]
 ---
 
-# Goal Verifier
+# 目标核对器
 
-## When to Use
+## 何时使用
 
-- End of any multi-step task that had an explicit or implied goal
-- After code/strategy changes or research synthesis
-- User asks to confirm, verify, or "is this finished / good enough"
-- Before marking a deliverable complete
+- 任何有明确或隐含目标的多步任务结束时
+- 改完代码/策略，或做完研究综合之后
+- 用户要求确认、核对，或问「做完了吗 / 够不够」
+- 把交付物标成完成之前
 
-## Workflow
+## 流程
 
-1. Restate the original goal in one sentence.
-2. List acceptance criteria (explicit or inferred from conversation).
-3. Check each criterion: pass / fail / partial with evidence.
-4. If any fail, invoke self-refine-loop or report gaps.
-5. Only mark complete when all critical criteria pass.
+1. 用一句话重述原始目标。
+2. 列出验收标准（对话里说清的，或推断出来的）。
+3. 逐条检查：通过 / 未过 / 部分过，并给出证据。
+4. 有未过的，就调用 self-refine-loop，或把缺口报出来。
+5. 只有关键标准都通过，才标成完成。
 
-## Integrations
+## 可配合的技能
 
 - `self-refine-loop`
 - `auto-tester`
 
-## Error Handling
+## 出错时怎么处理
 
-| Failure | Response |
+| 失败 | 应对 |
 |---------|----------|
-| Goal undefined | Ask user to confirm goal before verifying. |
-| False positive risk | Require evidence (file path, command output, or test result). |
+| 目标没定义 | 先请用户确认目标，再核对。 |
+| 误报完成 | 必须有证据（文件路径、命令输出或测试结果）。 |
 
-## Gotchas
+## 注意
 
-- Verification is read-only; do not mutate artifacts during checks.
+- 核对是只读的；检查时不要改产物。
 
-## Example
+## 示例
 
-**Input:** User request matching triggers above.
-**Output:** Structured result per workflow with integrations invoked as needed.
+**输入：** 用户请求命中上面的触发条件。
+**输出：** 按流程给出结构化结果，并按需调用配合技能。

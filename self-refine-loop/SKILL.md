@@ -1,58 +1,57 @@
 ---
 name: self-refine-loop
 description: >
-  Runs a generator-critique-reviser loop to iteratively improve outputs.
-  Use when quality matters: complex reasoning, code/strategy drafts, research
-  synthesis, high-uncertainty tasks, or when the first answer feels incomplete.
-  Prefer this over one-shot answers for non-trivial work. Also trigger on
-  explicit "refine / critique / improve / self-refine". Stop at 5 iterations
-  or confidence ≥ 8/10.
+  跑「生成—批评—改写」循环，迭代改进输出。质量要紧时用：
+  复杂推理、代码/策略草稿、研究综合、高不确定性任务，或第一版
+  答案显得不完整。非琐碎工作优先用本技能，而不是一遍交差。
+  用户明确说 refine / critique / improve / 改进 / 再改一版 时也触发。
+  最多 5 轮，或把握 ≥ 8/10 就停。
 version: 1.2.0
 author: Stijnman + adapted
 license: MIT
 compatibility: Grok agent; optional MCP and shell access
 metadata:
   grok:
-    tags: [self refine, reflexion loop, critique and revise, improve output, iterate]
+    tags: [自我改进, 批评并改写, 迭代, refine, 提高输出]
     related_skills: [goal-verifier, agentic-uncertainty-quantifier, first-principles]
 ---
 
-# Self Refine Loop
+# 自我改进循环
 
-## When to Use
+## 何时使用
 
-- Complex or high-stakes outputs (strategy code, research conclusions, decisions)
-- First draft is incomplete, inconsistent, or low-confidence
-- User asks to refine, critique, improve, or iterate
-- After uncertainty-quantifier flags high epistemic uncertainty
+- 复杂或高风险输出（策略代码、研究结论、决策）
+- 初稿不完整、不一致，或把握很低
+- 用户要求改进、批评、提高或再改一版
+- 不确定性量化器标出高认知不确定之后
 
-## Workflow
+## 流程
 
-1. Capture the current output and the user's quality criteria.
-2. Generate a critique listing specific weaknesses (max 5 bullets).
-3. Revise the output addressing every critique point.
-4. Score confidence 0-10 on whether criteria are met.
-5. Repeat until confidence >= 8 or 5 iterations; return best version with changelog.
+1. 记下当前输出和用户的质量标准。
+2. 生成批评，列出具体弱点（最多 5 条）。
+3. 改写输出，每一条批评都要处理。
+4. 按标准是否满足，给把握打 0–10 分。
+5. 重复直到把握 ≥ 8 或满 5 轮；返回最好的一版，并附改动说明。
 
-## Integrations
+## 可配合的技能
 
 - `goal-verifier`
 - `agentic-uncertainty-quantifier`
 - `dspy-prompt-optimizer`
 
-## Error Handling
+## 出错时怎么处理
 
-| Failure | Response |
+| 失败 | 应对 |
 |---------|----------|
-| No criteria given | Ask user for 1-3 success criteria before looping. |
-| Confidence stuck below 5 | Stop early; report blocker and ask for guidance. |
-| Output grows unbounded | Cap revisions to prior length + 20%. |
+| 没给标准 | 先请用户给 1–3 条成功标准，再循环。 |
+| 把握卡在 5 以下 | 提前停；报告卡点并请用户指引。 |
+| 输出无限变长 | 改写篇幅上限为上一版 + 20%。 |
 
-## Gotchas
+## 注意
 
-- Do not loop on trivial typos; one-pass fix is enough.
+- 琐碎错别字不要循环；改一遍就够。
 
-## Example
+## 示例
 
-**Input:** User request matching triggers above.
-**Output:** Structured result per workflow with integrations invoked as needed.
+**输入：** 用户请求命中上面的触发条件。
+**输出：** 按流程给出结构化结果，并按需调用配合技能。
